@@ -12,14 +12,14 @@ from runge_kutta import RungeKutta
 
 class Orbit:
     def __init__(
-        self, galaxy: Galaxy, low=100, up=1000, delta_t=1e2
+        self, galaxy: Galaxy, low=100, up=1000, delta_t=1e2, step=20
     ):  # （星系，最小轨道长度，最大轨道长度）
         self._galaxy = galaxy
         self._orbitNum = galaxy.starNum
         self._delta_t = delta_t
         self._anchor_points = self._galaxy.anchor_points  # 生成星系
-        self._euler = Euler(self._galaxy, step=20, delta_t=delta_t)  # 欧拉更新器
-        self._runge_kuuta = RungeKutta(self._galaxy, step=5, delta_t=delta_t)  # 龙格库塔更新器
+        self._euler = Euler(self._galaxy, step=step, delta_t=0)  # 欧拉更新器
+        self._runge_kuuta = RungeKutta(self._galaxy, step=step, delta_t=0)  # 龙格库塔更新器
 
         self._data_points = np.zeros((self._galaxy._starNum, 2))  # 点列表
         self._data_curves = [
@@ -68,7 +68,7 @@ class Orbit:
         self._set_start()
 
     def update(self):
-        self._euler.update()  # 更新星系
+        self._runge_kuuta.update()  # 更新星系
 
         for i in range(self._galaxy._starNum):  # 更新__data_curves
             self._data_curves[i][0][0] = self._galaxy.planet.Pos[i][0]

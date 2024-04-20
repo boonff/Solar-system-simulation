@@ -1,5 +1,4 @@
 import numpy as np
-from decimal import Decimal, getcontext
 
 from planet import Planet
 
@@ -90,7 +89,7 @@ class Galaxy:
         self.add_planet((107710436000.65, 0, 0), (0, 35020, 0), 4.87e24)  # 金星
         self.add_planet((149597828000.68, 0, 0), (0, 29783, 0), 5.97e24)  # 地球
         self.add_planet((227388699000.59, 0, 0), (0, 24070, 0), 6.39e23)  # 火星
-        self.add_planet((816624856528.0308, 0, 0), (0, 12755.234, 0), 1.8982e27)  # 木星
+        self.add_planet((816624856528.0308, 0, 0), (0, 13070, 0), 1.8981e27)  # 木星
         self.add_planet((1433147198000.73, 0, 0), (0, 9680, 0), 5.68e26)  # 土星
         self.add_planet((2875270267000.18, 0, 0), (0, 6810, 0), 8.68e25)  # 天王星
         self.add_planet((4495414751000.75, 0, 0), (0, 5430, 0), 1.02e26)  # 海王星
@@ -98,16 +97,16 @@ class Galaxy:
             self.planet.Pos[3], 384400000, (0, 1020 + 29783, 0), 7.34e22
         )  # 月球
         self.add_stellite(
-            self.planet.Pos[5], 421800000, (0, 17330 + 12755.234, 0), 8.94e22
+            self.planet.Pos[5], 421800000, (0, 17330 + 13070, 0), 8.94e22
         )  # 伊欧
         self.add_stellite(
-            self.planet.Pos[5], 671100000, (0, 13740 + 12755.234, 0), 4.8e22
+            self.planet.Pos[5], 671100000, (0, 13740 + 13070, 0), 4.8e22
         )  # 伊欧
         self.add_stellite(
-            self.planet.Pos[5], 1070400000, (0, 10880 + 12755.234, 0), 1.48e23
+            self.planet.Pos[5], 1070400000, (0, 10880 + 13070, 0), 1.48e23
         )  # 伊欧
         self.add_stellite(
-            self.planet.Pos[5], 1882700000, (0, 8200 + 12755.234, 0), 1.08e23
+            self.planet.Pos[5], 1882700000, (0, 8200 + 13070, 0), 1.08e23
         )  # 伊欧
         self._anchor_points[9] = 3
         self._anchor_points[10] = 5
